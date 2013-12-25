@@ -1,4 +1,4 @@
-<p> These are repositories with my solutions to <a href="https://www.edx.org">edX's</a> courses assignments</p>
+<p> These are repositories with my solutions to <a href="https://www.edx.org/">edX's</a> courses assignments</p>
 
 <h3 align="center"> DISCLAIMER </h3>
 <hr>
@@ -14,6 +14,9 @@
 <div id="#courses">
 	<ul>
 		<li><a href="https://www.edx.org/course/mitx/mitx-6-00-1x-introduction-computer-1122">6.00.1x Introduction to Computer Science and Programming Using Python</a> - <i> MITx / Fall 2013 </i></li>
+		</li>
 	</ul>
 </div>
+
+
 
