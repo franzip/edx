@@ -2,5 +2,5 @@
 <h4><i> MITx / Fall 2013 </i></h4>
 <hr>
 
-<p>The course uses Python 2.7.5 + Canopy as IDLE.</p>
+<p>The course uses Python 2.7.5 + Canopy as IDE.</p>
 
