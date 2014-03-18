@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE meal [
+    <!ELEMENT meal (person*,food*,eats*)>
+    <!ELEMENT person EMPTY>
+    <!ELEMENT food EMPTY>
+    <!ELEMENT eats EMPTY>
+    <!ATTLIST person name ID #REQUIRED>
+    <!ATTLIST food name ID #REQUIRED>
+    <!ATTLIST eats diner IDREF #REQUIRED dish IDREF #REQUIRED>
+]>
+
+<!-- Validates -->
+<meal>
+  <person name="Alice"/>
+  <person name="Bob"/>
+  <person name="Carol"/>
+  <person name="Dave"/>
+  <food name="salad"/>
+  <food name="turkey"/>
+  <food name="sandwich"/>
+  <eats diner="Alice" dish="turkey"/>
+  <eats diner="Bob" dish="salad"/>
+  <eats diner="turkey" dish="Dave"/>
+</meal>
+
+
+
+<!-- 
+Wrong: Expecting (person*, food*, eats*) got (person food eats person food eats person food eats)
+<meal>
+  <person name="Alice"/>
+  <food name="salad"/>
+  <eats diner="Alice" dish="salad"/>
+  <person name="Bob"/>
+  <food name="salad"/>
+  <eats diner="Bob" dish="salad"/>
+  <person name="Carol"/>
+  <food name="sandwich"/>
+  <eats diner="Carol" dish="sandwich"/>
+</meal>
+-->
+
+
+<!-- Wrong: IDREF references an unknown ID "food"
+<meal>
+  <person name="Alice"/>
+  <person name="Bob"/>
+  <food name="salad"/>
+  <eats diner="Alice" dish="food"/>
+  <eats diner="Bob" dish="food"/>
+</meal>
+-->

@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="person">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fname" type="xs:string"/>
+        <xs:element name="initial" type="xs:string"
+            minOccurs="0"/>
+        <xs:element name="lname" type="xs:string"/>
+        <xs:element name="address" type="xs:string"
+            maxOccurs="2"/>
+        <xs:choice>
+          <xs:element name="major" type="xs:string"/>
+          <xs:element name="minor" type="xs:string"
+              minOccurs="2" maxOccurs="2"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

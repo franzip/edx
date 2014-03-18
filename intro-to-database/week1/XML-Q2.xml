@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE INFO [
+	<!ELEMENT INFO (ADDR?, PHONE+)>
+	<!ELEMENT ADDR (#PCDATA)>
+	<!ELEMENT PHONE (#PCDATA)>
+]>
+
+<INFO>
+         <ADDR>101 Maple St.</ADDR>
+         <PHONE>555-1212</PHONE>
+         <PHONE>555-4567</PHONE>
+</INFO>

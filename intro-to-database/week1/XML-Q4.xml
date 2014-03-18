@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE A [
+    <!ELEMENT A (B+, C)>
+    <!ELEMENT B (#PCDATA)>
+    <!ELEMENT C (B?, D)>
+    <!ELEMENT D (#PCDATA)>
+]>
+
+<A>
+	<B>
+	</B>
+	<C>
+		<B></B>
+		<D></D>
+	</C>
+</A>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE FOOBAR [
+   <!ELEMENT FOOBAR (EMP*)>
+   <!ELEMENT EMP (ADDR, PHONE)>
+   <!ATTLIST EMP name IDREF #REQUIRED>
+   <!ELEMENT ADDR (#PCDATA)>
+   <!ELEMENT PHONE (#PCDATA)>     
+]>
+
+<!-- Wrong  
+	<!ATTLIST PHONE owner IDREF #REQUIRED> 
+-->
+
+<FOOBAR>
+	<EMP name = "Kermit">
+    	<ADDR>123 Sesame St.</ADDR>
+    	<PHONE type = "cell">555-1212</PHONE>
+	</EMP>
+</FOOBAR>
