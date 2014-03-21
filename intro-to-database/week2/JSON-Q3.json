@@ -1,0 +1,44 @@
+// Validate against schema
+
+{ "ItemID": "Item123",
+  "ItemName": "desk",
+  "Price": 50,
+  "Sellers": ["Amy","Ben"],
+  "Ratings": [{"Rater":"Amy", "Score":5}, {"Score":1},
+              {"Rater":"Carl", "Score":4}],
+  "AvgRating": 10.0,
+  "FreeShipping": true }
+
+
+// Does not validate against schema
+
+{ "ItemID": "Item123",
+  "ItemName": "desk",
+  "Price": 50,
+  "Sellers": ["Amy","Ben","Eve","Fred"],
+  "Ratings": [{"Rater":"Amy", "Score":5}, {"Score":1},
+              {"Rater":"Carl", "Score":4}],
+  "AvgRating": 3.33,
+  "FreeShipping": true }
+
+// Does not validate against schema
+
+{ "ItemID": "Item123",
+  "ItemName": "desk",
+  "Price": 50,
+  "Sellers": ["Amy","Ben"],
+  "Ratings": [{"Rater":"Amy", "Score":5}, {"Score":1},
+              {"Rater":"Carl", "Score":4}],
+  "AvgRating": 3.33,
+  "FreeShipping": [true] }
+
+// Does not validate against schema
+
+{ "ItemID": "Item123",
+  "ItemName": "desk",
+  "Price": 50,
+  "Sellers": ["Amy","Ben"],
+  "Ratings": [{"Rater":"Amy", "Score":5}, {"Score":1},
+              {"Rater":"Carl", "Score":4}],
+  "AvgRating": 3.33,
+  "FreeShipping": "yes" }

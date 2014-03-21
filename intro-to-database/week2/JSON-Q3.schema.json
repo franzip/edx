@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties":
+    { "ItemID": { "type":"string", "pattern":"Item*" },
+      "ItemName": { "type":"string" },
+      "Price": { "type":"integer", "minimum":10, "maximum":100 },
+      "Sellers": { "type":"array", "maxItems":3,
+                   "items": { "type":"string" }},
+      "Ratings": { "type":"array",
+                   "items":
+                      { "type": "object",
+                        "properties": {"Rater":
+                                       {"type": "string", "optional": true},
+                                       "Score":
+                                       {"type": "integer", "minimum":1,
+                                        "maxiumum":5}}}},
+      "AvgRating": { "type":"number", "optional":true },
+      "FreeShipping": {"type":"boolean" }
+    }
+}

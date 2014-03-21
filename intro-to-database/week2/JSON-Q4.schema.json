@@ -1,0 +1,17 @@
+// Valid schema for B
+"B": {"type":"object",
+      "properties": {"C": {"type":"integer"},
+                     "D": {"type":"integer"}}}
+
+// Valid schema for A
+"A": {"type":"array", "minItems":4, "maxItems":4,
+      "items":{"type":"integer"}}
+
+// Invalid schema for A
+"A": {"type":"array", "minItems":0, "maxItems":3,
+      "items":{"type":"integer"}}
+
+// Valid schema for E
+"E": {"type":"array",
+      "items": {"type":["integer","boolean"]}}
+
