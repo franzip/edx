@@ -1,0 +1,60 @@
+[Q1] Consider relation R(A,B,C,D,E) with multivalued dependencies:
+
+A ->> B, B ->> D
+
+and no functional dependencies. Suppose we decompose R into 4th Normal Form. Depending on the order in which we deal with 4NF violations, we can get different final decompositions. Which one of the following relation schemas could be in the final 4NF decomposition?
+
+1 ABD
+2 ABCE
+3 AB
+4 ACDE
+
+[Q2] Let R(A,B,C,D,E) be a relation in Boyce-Codd Normal Form (BCNF). Suppose ABC is the only key for R. Which of the following functional dependencies is guaranteed to hold for R?
+
+1 ABDE -> C
+2 BCD -> E
+3 ABE -> D
+4 ABCE -> D
+
+[Q3] Consider a relation R(A,B,C,D). For which of the following sets of FDs is R in Boyce-Codd Normal Form (BCNF)?
+
+1 C → B, D → A, C → D, A → C
+2 BC → A, AD → C, CD → B, BD → C
+3 C → D, CD → A, AB → C, BD → A
+4 C → B, BC → A, A → C, BD → A
+
+[Q4] Consider relation R(A,B,C,D) with functional dependencies:
+
+A → B, C → D, AD → C, BC → A
+
+Suppose we decompose R into Boyce-Codd Normal Form (BCNF). Which of the following schemas could not be in the result of the decomposition?
+
+1 ACD
+2 AC
+3 CD
+4 AB
+
+[Q5] Consider a relation R(A,B,C,D,E). For which of the following sets of FDs is R in Boyce-Codd Normal Form (BCNF)?
+
+1 BCD → E, BDE → C, BE → D, BE → A
+2 ACD → E, AE → C, CE → B, A → D
+3 ABD → C, ACD → E, ACE → B, BC → E
+4 BDE → A, AC → E, B → C, DE → A
+
+[Q6] Consider relation R(A,B,C,D) with functional and multivalued dependencies:
+
+A → B, C → D, B ->> C
+
+Suppose we decompose R into 4th Normal Form. Depending on the order in which we deal with 4NF violations, we can get different final decompositions. Which one of the following relation schemas could be in the final 4NF decomposition?
+
+1 ABC
+2 BCD
+3 AB
+4 ACD
+
+Q1 3
+Q2 4
+Q3 2
+Q4 1
+Q5 1
+Q6 3

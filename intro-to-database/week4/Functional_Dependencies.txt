@@ -1,0 +1,94 @@
+[Q1] Consider relation R(A,B,C,D,E) with functional dependencies:
+
+AB → C, C → D, BD → E
+
+Which of the following sets of attributes does not functionally determine E?
+
+1 BE 
+2 ABC 
+3 AD
+4 AB 
+
+[Q2] Consider relation R(A,B,C,D,E) with functional dependencies:
+
+D → C, CE → A, D → A, AE → D
+
+Which of the following is a key?
+
+1 A 
+2 BDE 
+3 BD
+4 CDE 
+
+[Q3] Let relation R(A,B,C,D,E,F,G,H) satisfy the following functional dependencies:
+
+A → B, CH → A, B → E, BD → C, EG → H, DE → F
+
+Which of the following FDs is also guaranteed to be satisfied by R?
+
+1 CDE → AF 
+2 CGH → BF 
+3 ADG → CH 
+4 BCD → FH
+
+[Q4] Consider relation R(A,B,C,D,E,F) with functional dependencies:
+
+CDE → B, ACD → F, BEF → C, B → D
+
+Which of the following is a key?
+
+1 ABDF 
+2 ABEF
+3 ADEF 
+4 ABE
+
+[Q5] Consider relation R(A,B,C,D,E,F,G) with functional dependencies:
+
+AB → C, CD → E, EF → G, FG → E, DE → C, and BC → A
+
+Which of the following is a key?
+
+1 ACDF 
+2 ABDF
+3 BDEG 
+4 BDF
+
+[Q6] Let relation R(A,B,C,D,E) satisfy the following functional dependencies:
+
+AB → C, BC → D, CD → E, DE → A, AE → B
+
+Which of the following FDs is also guaranteed to be satisfied by R?
+
+1 BD → A 
+2 CE → A 
+3 ABC → D
+4 D → B
+
+[Q7] Let relation R(A,B,C,D) satisfy the following functional dependencies:
+
+A → B, B → C, C → A
+
+Call this set S1. A different set S2 of functional dependencies is equivalent to S1 if exactly the same FDs follow from S1 and S2. Which of the following sets of FDs is equivalent to the set above?
+
+1 C → B, B → A, A → C 
+2 A → BC, C → AB 
+3 B → A, B → C, C → B 
+4 A → B, B → A, C → A
+
+[Q8] Suppose relation R(A,B,C) currently has only the tuple (0,0,0), and it must always satisfy the functional dependencies A → B and B → C. Which of the following tuples may be inserted into R legally?
+
+1 (1,0,2) 
+2 (1,0,1) 
+3 (1,1,0) 
+4 (0,2,1)
+
+ANSWERS:
+
+Q1 3
+Q2 2
+Q3 3 
+Q4 2
+Q5 2
+Q6 3
+Q7 1 
+Q8 3
