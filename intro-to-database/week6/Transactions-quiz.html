@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<p>
+Each multiple-choice quiz problem is based on a "root question," from which the system generates different correct and incorrect choices each time you take the quiz. Thus, you can test yourself on the same material multiple times. We strongly urge you to continue testing on each topic until you complete the quiz with a perfect score at least once. Simply click the "Reset" button at the bottom of the page for a new variant of the quiz.<br/>
+
+After submitting your selections, the system will score your quiz, and for incorrect answers will provide an "explanation" (sometimes for correct ones too). These explanations should help you get the right answer the next time around. To prevent rapid-fire guessing, the system enforces a minimum of 10 minutes between each submission of solutions.
+</p>
+
+<p> [Q1] </p>
+
+<p>
+Consider tables R(A) and S(B) and the following transaction T1: <br/>
+T1: set transaction isolation level repeatable read; <br/>
+    select * from R; <br/>
+    select * from R; <br/>
+    select * from S; <br/>
+    commit; <br/>
+</p>
+<p>
+	Suppose table R initially has one tuple with value A=3 and table S initially has one tuple with value B=6. Consider the following possible transactions T2, executed around the same time as T1. Which one of them can cause the two transactions to exhibit nonserializable behavior?
+</p>
+<ul>
+<li>T2: set transaction isolation level serializable; update S set B=7; commit;</li>
+<li>T2: set transaction isolation level serializable; delete from R where A=3; commit;</li>
+<li>T2: set transaction isolation level serializable; insert into R values (4); commit;</li>
+<li>T2: set transaction isolation level serializable; update R set A=4; update S set B=5 where B&lt;5; commit;</li>
+</ul>
+</p>
+
+<p> [Q2] </p>
+
+<p> Consider a relation R(x) containing integers. Suppose Alice runs a transaction that is a query: </p>
+
+<p>select sum(x) from R;<br/>
+   commit;</p>
+
+<p>
+Betty's transaction is a sequence of inserts:<br/>
+   insert into R values (10);<br/>
+   insert into R values (20);<br/>
+   insert into R values (30);<br/>
+   commit;<br/><br/>
+Carol's transaction is a sequence of deletes: <br/>
+   delete from R where x=30; <br/>
+   delete from R where x=20; <br/>
+   commit; 
+</p>
+
+<p>
+Before any of these transactions execute, the sum of the integers in R is 1000, and none of the integers are 10, 20, or 30. If Alice's, Betty's, and Carol's transactions run at about the same time, and each runs under isolation level READ COMMITTED, which of the following sums could be produced by Alice's transaction?
+</p>
+
+<ol>
+<li>950</li>
+<li>1020</li>
+<li>1010</li>
+<li>1050</li>
+</ol>
+
+<p> [Q3] </p>
+
+<p>
+Consider a relation R(x) containing integers. Suppose Alice runs a transaction that is a query:<br/>
+
+   select sum(x) from R;<br/>
+   commit;<br/><br/>
+Betty's transaction is a sequence of inserts:<br/>
+   insert into R values (10); <br/>
+   insert into R values (20); <br/>
+   insert into R values (30); <br/>
+   commit; <br/><br/>
+Carol's transaction is a sequence of deletes:<br/>
+   delete from R where x=30; <br/>
+   delete from R where x=20; <br/>
+   commit;
+</p>
+
+<p> Before any of these transactions execute, the sum of the integers in R is 1000, and none of these integers are 10, 20, or 30. Alice's, Betty's, and Carol's transactions run at about the same time. Which of the following sums could be returned by Alice's transaction if all three transactions run under isolation level READ UNCOMMITTED, but not if all three run under isolation level SERIALIZABLE?</p>
+
+<ol>
+<li>1000</li>
+<li>950</li>
+<li>1060</li>
+<li>1030</li>
+</ol>
+
+<p>
+ANSWERS:
+<ol>
+<li>3</li>
+<li>3</li>
+<li>4</li>
+</ol>
+</p>
