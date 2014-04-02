@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<p>
+Each multiple-choice quiz problem is based on a "root question," from which the system generates different correct and incorrect choices each time you take the quiz. Thus, you can test yourself on the same material multiple times. We strongly urge you to continue testing on each topic until you complete the quiz with a perfect score at least once. Simply click the "Reset" button at the bottom of the page for a new variant of the quiz.<br/>
+
+After submitting your selections, the system will score your quiz, and for incorrect answers will provide an "explanation" (sometimes for correct ones too). These explanations should help you get the right answer the next time around. To prevent rapid-fire guessing, the system enforces a minimum of 10 minutes between each submission of solutions.
+</p>
+
+<p> [Q1] </p>
+
+<p> Consider the following base tables. Capitalized attributes are primary keys. All non-key attributes are permitted to be NULL.<br/>
+MovieStar(NAME, address, gender, birthdate)<br/>
+MovieExecutive(LICENSE#, name, address, netWorth)<br/>
+Studio(NAME, address, presidentLicense#)<br/>
+Each of the choices describes, in English, a view that could be created with a query on these tables. Which one can be written as a SQL view that is updatable according to the SQL standard?<br/><br/>
+</p>
+
+<ol>
+<li>A view "SameBirthday" containing pairs of movie star names where the movie stars have the same birthdate.</li>
+<li>A view "NewYorkStudios" containing the names and addresses of all studios with addresses containing "New York"</li>
+<li>A view "StudioPresInfo" containing the studio name, executive name, and license number for all executives who are studio presidents.</li>
+<li>A view "ExecutiveStar" containing the name, gender, and executive license number of all individuals who are both stars and executives.</li>
+</ol>
+
+<p> [Q2] </p>
+
+<p> Consider the following schema:<br/>
+Book(ISBN, title, year) // ISBN and title cannot be NULL<br/>
+Author(ISBN, name) // ISBN and name cannot be NULL <br/>
+and the following view definition over this schema:<br/><br/>
+Create View V as <br/>
+Select Book.ISBN, count(*)<br/>
+From Book, Author<br/>
+Where Book.ISBN = Author.ISBN<br/>
+And Author.name Like 'A%'<br/>
+And Book.year > 2000<br/>
+Group By Book.ISBN <br/><br/>
+This view is not updatable according to the SQL standard, for a number of reasons. Which of the following is a valid reason for the view being non-updatable according to the standard? <br/>
+</p>
+
+<ol>
+<li> NULL values are not permitted in Book.ISBN </li>
+<li> Use of aggregate function COUNT</li>
+<li> Book.year is omitted from the view</li>
+<li> The condition Book.year > 2000</li>
+</ol>
+
+<p> [Q3] </p>
+
+<p>
+Suppose a table T(A,B,C) has the following tuples: (1,1,3), (1,2,3), (2,1,4), (2,3,5), (2,4,1), (3,2,4), and (3,3,6). Consider the following view definition:<br/>
+Create View V as<br/>
+Select A+B as D, C<br/>
+From T<br/>
+Consider the following query over view V:<br/>
+Select D, sum(C)<br/>
+From V<br/>
+Group By D<br/>
+Having Count(*) &lt;&gt; 1<br/><br/>
+Which of the following tuples is in the query result?<br/>
+</p>
+
+<ol>
+<li> (5,7) </li>
+<li> (4,6)</li>
+<li> (6,7) </li>
+<li> (5,11)</li>
+</ol>
+
+<p>
+ANSWERS:
+<ol>
+<li>2</li>
+<li>2</li>
+<li>3</li>
+</ol>
+</p>
