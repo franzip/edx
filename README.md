@@ -13,6 +13,8 @@
 <hr>
 <div id="#courses">
 	<ul>
+		<li><a href="https://www.edx.org/course/mitx/mitx-6-00-2x-introduction-computational-1505">6.00.2x Introduction to Computational Thinking and Data Science</a> - <i> MITx / Spring 2014 </i></li>
+		</li>
 		<li><a href="https://www.edx.org/course/mitx/mitx-6-00-1x-introduction-computer-1122">6.00.1x Introduction to Computer Science and Programming Using Python</a> - <i> MITx / Fall 2013 </i></li>
 		</li>
 		<li><a href="https://class.stanford.edu/courses/Engineering/db/2014_1/about">
