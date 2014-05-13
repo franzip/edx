@@ -2,5 +2,5 @@
 <h4><i>MITx / Spring 2014</i></h4>
 <hr>
 
-<p>The course uses Python 2.7.5 + Canopy as IDE.</p>
+<p>Introductory course on Data Science using PyLab</p>
 
