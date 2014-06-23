@@ -1,0 +1,30 @@
+-#  This file is app/views/movies/index.html.haml
+%h1 All Movies
+
+-# Display the checkbox
+= form_tag movies_path, :method => :get, :id => "ratings_form" do
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]", 1, @checks.include?(rating), :id => "ratings_#{rating}"
+  = submit_tag  "Refresh", :id => "ratings_submit", :name => nil
+
+-# Display the movies and show the yellow background on the right table header element
+%table#movies
+  %thead
+    %tr
+      %th{(params[:sort] == 'title') ? {:class => "#{@selected}"}  : {:class => nil}}
+        %a#title_header{ :href => movies_path({:sort => 'title'}) } Movie Title
+      %th Rating
+      %th{(params[:sort] == 'release_date') ? {:class => "#{@selected}"} : {:class => nil}}
+        %a#release_date_header{ :href => movies_path({:sort => 'release_date'}) }Release Date
+      %th More Info
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title 
+        %td= movie.rating
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
+
+= link_to 'Add new movie', new_movie_path
