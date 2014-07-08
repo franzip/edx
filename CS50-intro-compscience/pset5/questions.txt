@@ -1,0 +1,24 @@
+0.  GIF, PNG-8: 256 colors. 
+    PNG-24, BMP, JPEG: 16.777.216 colors.
+1.  GIF. APNG and MNG formats (both derived from PNG) supports animations.
+2.  Lossless compression algorithms do not apply any direct change to the compressed data (data can be retrieved unchanged).
+    Lossy compression algorithms instead achieve a better compression ratio, sacrificing part of the file data. 
+3.  JPEG.
+4.  The actual file's data are not erased from the clusters on which they resided. The OS simply moves those clusters to the
+    list of available ones, signaling that they can be reused.
+5.  Apart from physically destroying the hard drive, by using specific softwares which will overwrite all the hard drive
+    sectors with some data patterns.
+6.  stdint.h contains some integers types introduced by C99 standard.
+7.  To make the code portable among different low level/hardware implementations for a given data type (i.e. an integer). 
+8.  BYTE: 1 byte, DWORD: 4 bytes, LONG: 4 bytes, WORD: 2 bytes.
+9.  0x424d.
+10. bfSize specifies, in hexadecimal notation, the magic number which identifies the file format (BMP in this case).
+    biSize specifies the size in bytes related to the BITMAPINFOHEADER structure (the size of the header). 
+11. If biHeight is negative, that means that the BMP file is a top-down DIB and its origin is in the upper-left corner.
+12. The biBitCount field specifies the color depth (bpp, bits per pixel) for the file (2, 4, 8, 16, 24, 32).
+13. We could run out of RAM, storage space on the disk or maybe we've specified an invalid name for the output file "outfile".
+14. We want to read 1 RGBTRIPLE at time. On each call, fread will read 3 byte of data (an R-G-B value for a given pixel).
+15. 1
+16. fseek is used to move across a file.
+17. SEEK_CUR represents the current position in the file.
+18. Milo Banana dun it.
