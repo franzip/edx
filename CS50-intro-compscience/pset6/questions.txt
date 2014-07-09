@@ -1,0 +1,25 @@
+0.  pneumonoultramicroscopicsilicovolcanoconiosis represents the longest word in problem set's dictionary.
+1.  getrusage() is used for resources benchmarking purposes.
+2.  the rusage struct is made up of 16 components.
+3.  structs size could be too big to be passed by value. So we need to pass them by reference.
+4.  speller.c reads each word from a file, character by character using fgetc() until it reaches EOF.
+    Each character gets copied into a buffer called 'word', whose size defines the maximum possible
+    size for a word (word_size + 1 for '\0'). Only letters and apostrophes are copied into the buffer.
+    The loop also ignores words which are larger than the maximum buffer size and words that contain
+    a numeric character. The words counter get increased and the program checks for the word
+    spelling. The amount of time of that operation gets logged into ti_check and mispellings counter
+    gets eventually increased if the word is mispelled.
+5.  For fscanf() we use a format string as reference. The function returns the number of variables
+    which contains assigned values. We need instead to read character by character in order to validate
+    the word by excluding invalid characters.
+6.  That's because we declared DICTIONARY as constant and word[LENGTH + 1] is a fixed size buffer.
+7.  Trie structure to load a lexicographically order dictionary in memory.
+    Each node points to a 26 long sub-trie and has a boolean attribute to flag the end of a word. 
+    Initially all root's children and, more generally, every new node will be initialized to be NULL pointers 
+    with a boolean attribute set to false. This way, in the process of comparing input words with
+    our dictionary, we can deduce from the mere fact that a pointer is still NULL that
+    the word is not in the dictionary.
+8.  Took 1.41s in total using the large dictionary and shakespeare.txt which is the biggest text file available.
+9.  After refactoring the load() and check() loops ./speller shakespeare.txt now runs in 1.15s on average.
+10. Looking at the benchmarks, check() seems to be still a bit too slow. I had also to initialize each time each
+    new node on the load() function which sounds quite inefficient.
