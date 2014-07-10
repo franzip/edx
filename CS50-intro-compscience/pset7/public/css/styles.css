@@ -1,0 +1,274 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+
+/*****************************************************************************/
+
+/**
+ * Generic template settings
+ */
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#middle .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+#bottom
+{
+    /* shrink bottom's font size */
+    font-size: smaller;
+
+    /* surround with whitespace */
+    margin: 20px;
+}
+
+/*****************************************************************************/
+
+/**
+ * Override Bootstrap fonts.
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+body {
+    font-family: "Droid Serif", Helvetica, Arial, sans-serif;
+}
+
+/*****************************************************************************/
+
+
+/**
+ * apologize.php template settings
+ */
+ 
+.error-wrapper .slideRight {
+    margin: 20px 20px;
+    max-width: 50px;
+    max-height: 50px;
+ }
+ 
+/**
+ * CSS animation 
+ * Source: http://www.justinaguilar.com/animations/css/animations.css
+ */
+ 
+.slideRight{
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-150%);
+	}
+	50%{
+		transform: translateX(8%);
+	}
+	65%{
+		transform: translateX(-4%);
+	}
+	80%{
+		transform: translateX(4%);
+	}
+	95%{
+		transform: translateX(-2%);
+	}			
+	100% {
+		transform: translateX(0%);
+	}	
+}
+
+@-webkit-keyframes slideRight {
+	0% {
+		-webkit-transform: translateX(-150%);
+	}
+	50%{
+		-webkit-transform: translateX(8%);
+	}
+	65%{
+		-webkit-transform: translateX(-4%);
+	}
+	80%{
+		-webkit-transform: translateX(4%);
+	}
+	95%{
+		-webkit-transform: translateX(-2%);
+	}			
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
+/*****************************************************************************/
+
+/**
+ * reset_form.php template settings
+ */
+
+.reset-msg {
+    margin: 20px 20px;
+}
+
+/*****************************************************************************/
+
+/**
+ * quote.php and portfolio.php template settings
+ * Source: http://www.csstablegenerator.com/
+ */
+
+.display_stock {
+	margin:20px 40px;
+	padding:10px;
+	width:100%;
+	border:1px solid #ffffff;
+	text-align: center;
+	
+	-moz-border-radius-bottomleft:25px;
+	-webkit-border-bottom-left-radius:25px;
+	border-bottom-left-radius:25px;
+	
+	-moz-border-radius-bottomright:25px;
+	-webkit-border-bottom-right-radius:25px;
+	border-bottom-right-radius:25px;
+	
+	-moz-border-radius-topright:25px;
+	-webkit-border-top-right-radius:25px;
+	border-top-right-radius:25px;
+	
+	-moz-border-radius-topleft:25px;
+	-webkit-border-top-left-radius:25px;
+	border-top-left-radius:25px;
+}
+.display_stock table{
+    border-collapse: collapse;
+    border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+.display_stock tr:last-child td:last-child {
+	-moz-border-radius-bottomright:25px;
+	-webkit-border-bottom-right-radius:25px;
+	border-bottom-right-radius:25px;
+}
+.display_stock table tr:first-child td:first-child {
+	-moz-border-radius-topleft:25px;
+	-webkit-border-top-left-radius:25px;
+	border-top-left-radius:25px;
+}
+.display_stock table tr:first-child td:last-child {
+	-moz-border-radius-topright:25px;
+	-webkit-border-top-right-radius:25px;
+	border-top-right-radius:25px;
+}
+.display_stock tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:25px;
+	-webkit-border-bottom-left-radius:25px;
+	border-bottom-left-radius:25px;
+}
+.display_stock tr:hover td{
+	background-color:#cccccc;
+}
+.display_stock td {
+	vertical-align:middle;
+	background-color:#6699cc;
+    font-weight: bold;
+	border:1px solid #ffffff;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:30px;
+	font-size:18px;
+	color:#000000;
+}
+.display_stock tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}
+.display_stock tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}
+.display_stock tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.display_stock tr:first-child td{
+		background:-o-linear-gradient(bottom, #003366 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #003366), color-stop(1, #003f7f) );
+	background:-moz-linear-gradient( center top, #003366 5%, #003f7f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#003366", endColorstr="#003f7f");	background: -o-linear-gradient(top,#003366,003f7f);
+
+	background-color:#003366;
+	border:0px solid #ffffff;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:22px;
+	font-weight:bold;
+	color:#ffffff;
+}
+.display_stock tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #003366 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #003366), color-stop(1, #003f7f) );
+	background:-moz-linear-gradient( center top, #003366 5%, #003f7f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#003366", endColorstr="#003f7f");	background: -o-linear-gradient(top,#003366,003f7f);
+
+	background-color:#003366;
+}
+.display_stock tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.display_stock tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+.stock_nav
+{
+    margin-top: 40px;
+}
+
+
+/*****************************************************************************/
+
+/**
+ * navbar settings
+ */
+
+.my-nav {
+    margin: 0 5% 20px 5%;
+    width: 100%;
+}
+
+.nav .nav-tabs { 
+    width: 100%;
+}
+
+.display_name {
+    font-weight: bold;
+    color: black;
+}
+
+.nav li a {
+    font-size: 1.2em;
+    padding-left: 5px;
+}
+
+
