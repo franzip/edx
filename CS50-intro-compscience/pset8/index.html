@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!--
+
+index.html
+
+Computer Science 50
+Problem Set 8
+
+Framework for CS50 Shuttle.
+
+-->
+
+<html>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+        <link href="css/service.css" rel="stylesheet"/>
+        <script src="https://www.google.com/jsapi"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/math3d.js"></script>
+        <script src="js/buildings.js"></script>
+        <script src="js/houses.js"></script>
+        <script src="js/passengers.js"></script>
+        <script src="js/shuttle.js"></script>
+        <script src="js/service.js"></script>
+        <title>CS50 Shuttle</title>
+    </head>
+    <body>
+        <div id="left">
+            <div id="earth"></div>
+            <div id="shim"></div>
+        </div>
+        <div id="right">
+            <div id="logo">
+                CS50 Shuttle
+            </div>
+            <div id="instructions">
+                <button class="btn btn-success btn-xs" data-target="#modal" data-toggle="modal" id="start">
+                    Start Engine
+                </button>
+            </div>
+            <div id="controls">
+                <button class="btn btn-primary btn-sm" id="pickup">
+                    <span class="glyphicon glyphicon-arrow-up"></span> Pick Up
+                </button>
+                <button class="btn btn-primary btn-sm" id="dropoff">
+                    <span class="glyphicon glyphicon-arrow-down"></span> Drop Off
+                </button>
+            </div>
+            <div id="announcements">
+                no announcements at this time
+            </div>
+            <div id="chart"></div>
+            <div id="map"></div>
+        </div>
+        <div aria-hidden="true" aria-labelledby="label" class="modal" id="modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="label">Driving Lesson</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Vroom vroom!  Don't click the 3D Earth, else the engine may stall, in which case you'll need to re-start it.
+                        </p>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Move Forward</td>
+                                    <td>W</td>
+                                </tr>
+                                <tr>
+                                    <td>Move Backward</td>
+                                    <td>S</td>
+                                </tr>
+                                <tr>
+                                    <td>Turn Left</td>
+                                    <td>&#8592;</td>
+                                </tr>
+                                <tr>
+                                    <td>Turn Right</td>
+                                    <td>&#8594;</td>
+                                </tr>
+                                <tr>
+                                    <td>Slide Left</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Slide Right</td>
+                                    <td>D</td>
+                                </tr>
+                                <tr>
+                                    <td>Look Downward</td>
+                                    <td>&#8595;</td>
+                                </tr>
+                                <tr>
+                                    <td>Look Upward</td>
+                                    <td>&#8593;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Got It</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
