@@ -10,7 +10,7 @@ module FunWithStrings
     # 0 occurrences for each word at the beginning
     result = Hash.new(0)
     # ignore case and count occurrances for each word
-    self.to_s.downcase.scan(/\w+/).each do |word|
+    self.downcase.scan(/\w+/).each do |word|
       result[word] += 1
     end
     result
