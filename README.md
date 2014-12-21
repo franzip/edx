@@ -13,9 +13,11 @@
 <hr>
 <div id="#courses">
 	<ul>
+    <li><a href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-cs169-1x-engineering-1377" target="_blank">CS169.1x Engineering Software as Service</a> - <i> UC BerkeleyX / Winter 2014 </i></li>
+    </li>
+    <li><a href="https://www.edx.org/course/introduction-functional-programming-delftx-fp101x" target="_blank">FP101x Introduction to Functional Programming</a> - <i> DelftX / Winter 2014</i></li>
+    </li>
 		<li><a href="https://www.edx.org/course/harvardx/harvardx-cs50x-introduction-computer-1022" target="_blank">CS50 - Introduction to Computer Science</a> - <i> HarvardX / 2014 </i></li>
-		</li>
-		<li><a href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-cs169-1x-engineering-1377" target="_blank">CS169.1x Engineering Software as Service</a> - <i> UC BerkeleyX / Spring 2014 </i></li>
 		</li>
 		<li><a href="https://www.edx.org/course/mitx/mitx-6-00-2x-introduction-computational-1505" target="_blank">6.00.2x Introduction to Computational Thinking and Data Science</a> - <i> MITx / Spring 2014 </i></li>
 		</li>
