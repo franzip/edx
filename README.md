@@ -13,7 +13,7 @@
 <hr>
 <div id="#courses">
 	<ul>
-    <li><a href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-cs169-1x-engineering-1377" target="_blank">CS169.1x Engineering Software as Service</a> - <i> UC BerkeleyX / Winter 2015 </i></li>
+    <li><a href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-cs169-1x-engineering-1377" target="_blank">CS169.1x Engineering Software as Service</a> - <i> UC BerkeleyX / Winter 2014 </i></li>
     <li><a href="https://www.edx.org/course/engineering-software-service-part-2-uc-berkeleyx-cs169-2x" target="_blank">CS169.2x Engineering Software as Service</a> - <i> UC BerkeleyX / Spring 2015 </i></li>
     </li>
     <li><a href="https://www.edx.org/course/introduction-functional-programming-delftx-fp101x" target="_blank">FP101x Introduction to Functional Programming</a> - <i> DelftX / Winter 2014</i></li>
