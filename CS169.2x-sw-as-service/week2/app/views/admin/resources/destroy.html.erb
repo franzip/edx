@@ -1,0 +1,7 @@
+<% @page_heading = _('File Uploads') %>
+
+<p><%= _("Are you sure you want to delete this file")%> ( <%= @file.filename -%> )?</p>
+<%= form_tag :action => 'destroy' do %>
+  <%= hidden_field "file", "id" %>
+  <%= confirm_delete(_("Delete this file from the webserver?")) %>
+<% end %>

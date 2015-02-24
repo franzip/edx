@@ -1,0 +1,13 @@
+<% @page_heading = _('Manage pages') + content_tag(:div, link_to(_("New Page"), {:controller => 'pages', :action => 'new'}, :id => 'dialog-link', :class => 'btn info'), :class => 'pull-right') %>
+
+<table class='zebra-striped'>
+<thead>
+  <tr class='noborder'>
+    <th><%= _("Title") %></th>
+    <th><%= _("Permalink")%></th>
+    <th><%= _("Author")%></th>
+    <th><%= _("Date") %></th>
+  </tr>
+</thead>
+  <%= render 'pages' %>
+</table>

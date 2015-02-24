@@ -1,0 +1,15 @@
+<div id="active_<%= active.html_id %>" class='alert-message block-message info'>
+  <h3 class='light'><%= active.display_name %></h3>
+  <div class='widget-content'>
+    <p><%= active.description %></p>
+      <div><% active.class.fields.each do |row| -%>
+        <%= row.line_html(active) %>
+        <% end -%>
+      </div>
+      <%= link_to_remote('remove',
+        :url => {:action => 'remove', :id => active.id,
+                 :element => "active_#{active.html_id}"},
+        :before => "new Effect.Fade('active_#{active.html_id}')",
+        :loading => "new Element.show('update_spinner')") %>
+  </div>
+</div>

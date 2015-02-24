@@ -1,0 +1,53 @@
+To fully profit from Typo static caching capabilities, you need to add the
+following rewrite rules to either your .htaccess or your virtualhost after
+declaring the document root.
+
+== Rewrite Rules For Apache
+
+=== If Typo is installed at your URL root.
+  
+  RewriteEngine On
+
+  RewriteCond %{DOCUMENT_ROOT}/cache/index.html -f
+  RewriteRule ^/$ /cache/index.html [PT]
+
+  RewriteCond %{DOCUMENT_ROOT}/cache/%{REQUEST_FILENAME} -f
+  RewriteRule ^/(.*)$ /cache/$1 [PT]
+
+  RewriteCond %{DOCUMENT_ROOT}/cache/%{REQUEST_FILENAME}.html -f
+  RewriteRule ^/(.*)$ /cache/$1.html [PT]
+
+=== If Typo is installed in a sub-URL, e.g., /blog:
+
+  # Note that 'blog' appears twice in the rewritten URL.
+
+  RewriteEngine On
+
+  RewriteCond %{DOCUMENT_ROOT}/blog/cache/blog.html -f
+  RewriteRule ^/blog$ /blog/cache/blog.html [PT]
+
+  RewriteCond %{DOCUMENT_ROOT}/blog/cache/%{REQUEST_FILENAME} -f
+  RewriteRule ^/blog/(.*)$ /blog/cache/blog/$1 [PT]
+
+  RewriteCond %{DOCUMENT_ROOT}/blog/cache/%{REQUEST_FILENAME}.html -f
+  RewriteRule ^/blog/(.*)$ /blog/cache/blog/$1.html [PT]
+
+== Rewrite Rules For Nginx
+
+  if (-f $request_filename) {
+    break;
+  }
+
+  if (-f $document_root/cache/index.html) {
+    rewrite ^/$ /cache/index.html break;
+  }
+
+  if (-f $document_root/cache$uri) {
+    rewrite (.*) /cache$1 break;
+    break;
+  }
+
+  if (-f $document_root/cache$uri.html) {
+    rewrite (.*) /cache$1.html break;
+    break;
+  }

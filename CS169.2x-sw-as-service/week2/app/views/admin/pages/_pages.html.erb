@@ -1,0 +1,17 @@
+<%= render_void_table(@pages.size, 5)  %>
+
+<% for page in @pages %>
+<tr <%= alternate_class %>>
+  <td>
+    <%= link_to_edit_with_profiles page.title, page %>
+    <%= show_actions page %>
+  </td>
+  <td><%= page.name%></td>
+  <td><%= author_link(page) %></td>
+  <td>
+    <%= format_date page.created_at %><br />
+    <%= published_or_not page %>
+  </td>
+</tr>
+<% end %>
+<%= display_pagination(@pages, 5)%>
