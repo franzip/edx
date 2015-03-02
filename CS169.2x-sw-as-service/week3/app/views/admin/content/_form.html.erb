@@ -1,0 +1,153 @@
+<input type="hidden" name="current_editor" id="current_editor" value="<%= current_user.editor %>" />
+<input type="hidden" name="user_textfilter" id="user_textfilter" value="<%= current_user.text_filter_name %>" />
+<div id="autosave"></div>
+<div id="article_keywords_auto_complete" class="auto_complete"></div>
+
+<%= error_messages_for 'article' %>
+
+<div class='editor-right'>
+  <div class='well'>
+    <h4><%= _("Publish settings") %></h4>
+    <div class='actions'>
+      <%= link_to_destroy_with_profiles(@article) unless @article.id.nil? or @article.state.to_s.downcase == 'draft' %>
+	  <span id='destroy_link'><%= link_to_destroy_draft @article %></span>
+      <span id='preview_link'><%= link_to(_("Preview"), {:controller => '/articles', :action => 'preview', :id => @article.id}, {:target => 'new', :class => 'btn info'}) if @article.id %></span>
+    </div>
+    <div class='clearfix'>
+        <%= _("Status:") %> <strong><%= @article.state.to_s.downcase %></strong> <a href="#" onclick="Element.toggle('status'); return false">Change</a>
+      <ul class='inputs-list'>
+        <li id='status' style='display: none;'>        
+          <label for="article_published">
+            <%= check_box 'article', 'published'  %>
+            <%= _("Published") %>
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class='clearfix'>
+      Comments are <strong>enabled</strong> and trackbacks are <strong>disabled</strong> <a href="#" onclick="Element.toggle('conversation'); return false">Change</a>
+      <ul class='inputs-list' id='conversation' style='display: none'>
+        <li>
+          <label for="article_allow_pings">
+            <%= check_box 'article', 'allow_pings' %>
+            <%= _("Allow trackbacks") %>
+          </label>
+        </li>
+        <li>
+          <label for="article_allow_comments">
+            <%= check_box 'article', 'allow_comments' %>
+            <%= _("Allow comments") %>
+          </label>
+        </li>
+      </ul>
+    </div>
+	  <div class='clearfix'>
+      <%= _("Publish <strong>now</strong>") %> <a href="#" onclick="Element.toggle('publish'); return false">Change</a>
+      <ul class='inputs-list'>
+        <li id='publish' style='display: none;'>
+          <%= calendar_date_select 'article', 'published_at', {:class => 'span3'} %>
+        </li>
+      </ul>
+    </div>
+    <div class='clearfix'>
+      <%= _("Visibility:") %> <strong>public</strong> <a href="#" onclick="Element.toggle('visibility'); return false">Change</a>
+      <ul class='inputs-list' id='visibility' style='display: none'>
+        <li>
+          <label for="article_password"><%= _("Password:") %>
+            <%= password_field :article, :password, :class => 'span3' %>
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class='clearfix'>
+      <%= _("Permalink:") %> <a href="#" onclick="Element.toggle('permalink'); return false">Change</a>
+      <ul class='inputs-list' id='permalink' style='display: none'>
+        <li>
+            <%= text_field 'article', 'permalink', {:class => 'span4'} %>
+        </li>
+      </ul>
+    </div>
+    <div class='clearfix'>
+      <%= _("Article filter") %>: <strong><%= @article.text_filter.description %></strong> <a href="#" onclick="Element.toggle('text_filter'); return false">Change</a>
+      <ul id='text_filter' class='inputs-list' style='display: none'>
+        <li>
+          <select name="article[text_filter]" id="text_filter">
+            <%= options_for_select text_filter_options, @article.text_filter %>
+          </select>
+        </li>
+      </ul>
+    </div>
+
+    <div class='actions'>
+      <input id='save_draft' type="submit" value="<%= _('Save as draft') %>" name="article[draft]" class='btn info' />
+      <%= save( _("Publish")) %>
+    </div>
+  </div>
+
+  <div class='well'>
+    <h4><%= _("Categories") %></h4>
+    <%= render 'categories' %>
+  </div>
+  <%= get_post_types %>
+</div>
+
+<div class='editor-left'>
+  <div>
+    <div>
+      <%= text_field 'article', 'title', :class => 'span1', :style => ' width: 99%', :placeholder => _('Title') %>
+    </div>
+
+    <%= render('images', { :images => @images}) unless @images.empty? %>
+
+    <div id='editor-menu'>
+		<ul class="tabs">
+			<li id="f" class='<%= "active" if current_user.editor == 'visual' %>'>
+				<%= build_editor_link("Visual", 'insert_editor', 'fck', 'visual_editor', 'visual') %>
+			</li>
+			<li id="s" class='<%= "active" if current_user.editor == 'simple' %> '>
+				<%= build_editor_link("HTML", 'insert_editor', 'simple', 'simple_editor', 'simple') %>
+			</li>
+		</ul>
+    </div>
+
+    <div id="editor">
+      <div id='quicktags' style='<%= "display: none;" if current_user.editor == 'visual' %>'>
+        <script type="text/javascript">edToolbar('article_body_and_extended');</script>
+      </div>
+
+      <div id ='visual_editor' <%= "style='display: none;'" if current_user.editor == 'simple'%> >
+        <%= ckeditor_textarea('article', 'body_and_extended', {:class => 'large', :height => '300px', :rows => '20'}) if current_user.editor == 'visual' %>
+      </div>
+
+      <div id='simple_editor' class='input_text' <%= "style='display: none;'" if current_user.editor == 'visual'%> >
+        <%= text_area('article', 'body_and_extended', {:class => 'large', :height => '300px', :rows => '20'}) if current_user.editor == 'simple' %>
+        <%= render_macros(@macros) if current_user.editor == 'simple' %>
+      </div>
+    </div>
+
+		<h4><%= _("Tags") %></h4>
+    <div class='class'>
+      <%= text_field 'article', 'keywords', {:autocomplete => 'off', :style => 'width: 100%'} %>
+    </div>
+    <%= auto_complete_field 'article_keywords', { :url => { :action => "auto_complete_for_article_keywords"}, :tokens => ','}%>		
+  </div>
+
+  <div class='separator'>
+    <h4><%= _("Excerpt") %></h4>
+    <div class=''>
+      <%= text_area 'article', 'excerpt', {:height => '150', :style => 'width: 100%', :rows => '5'} %>
+      <span class='help-block'><%=_("Excerpts are posts summaries that are shown on your blog homepage only but won’t appear on the post itself") %></span>
+    </div>
+  </div>
+
+  <div class=''>
+    <h4><%= _("Uploads") %></h4>
+    <p class='help-block'>Uploads will be displayed as attachments in your RSS feed, but won't appear in your articles.</p>
+    <ul id='attachments' class='inputs-list'>
+      <%= render 'admin/content/attachment', { :attachment_num => 1, :hidden => false } -%>
+    </ul>
+  </div>    
+  </div>
+
+</div>
+

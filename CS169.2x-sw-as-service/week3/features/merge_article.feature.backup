@@ -1,0 +1,30 @@
+Feature: Merge Articles
+  As a blog administrator
+  In order to remove duplicated articles
+  I want to be able to merge articles with same topic
+
+  Background: 
+    Given the blog is set up
+
+    Given the following users exist:
+      | profile_id | login  | name  | password | email            | state  |
+      | 1          | admin  | admin | 1111111  | joe@snow.com     | active | 
+      | 2          | usr1   | User1 | 1111111  | usr1@example.com | active |
+      | 3          | usr2   | User2 | 2222222  | usr2@example.com | active |
+
+    Given the following articles exist:
+      | id | title    | author | user_id | body     | allow_comments | published | published_at        | state     | type    |
+      | 3  | Foo      | usr1   | 2       | Foobaz   | true           | true      | 2015-24-01 22:30:00 | published | Article |
+      | 4  | Bar      | usr2   | 3       | Barbaz   | true           | true      | 2015-24-01 23:00:00 | published | Article |
+
+    Given the following comments exist:
+      | id | type    | author | body     | article_id | user_id | created_at          |
+      | 1  | Comment | usr1   | Comment1 | 3          | 2       | 2015-24-01 23:31:00 |
+      | 2  | Comment | usr1   | Comment2 | 4          | 2       | 2015-24-01 24:01:00 |
+
+  Scenario: An admin cannot merge articles
+  Given I am logged in as non admin
+
+
+  Scenario: An admin can merge articles
+  Given I am logged in as an admin
