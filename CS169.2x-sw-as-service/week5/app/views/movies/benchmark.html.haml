@@ -1,0 +1,16 @@
+%h1 Benchmark Results
+
+%table#results
+  %thead
+    %tr
+      %th Action Tested
+      %th Times Run
+      %th Total Time
+  %tbody
+    - @results.each do |r|
+      %tr
+        %td #{r[:action]}
+        %td #{r[:times_run]}
+        %td #{r[:time]}
+
+= link_to 'Movies', movies_path
