@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cook's Collections</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="styles/app.css" type="text/css" />
+</head>
+
+<body>
+  <img class="logoImg" src="images/cutlery.png" /><h1 style="float:left;">Cook's Collections: A Cookbook App</h1>
+  <h3 style="clear:both">Recipe Type</h3>
+  <div>
+    <select id="RecipeType" onchange="loadRecipes(this);">
+      <option disabled="disabled">Choose a type. . .</option>
+    </select>
+  </div>
+
+  <h3>Description</h3>
+  <div id="recipeDesc"></div>
+
+  <h3>Primary Ingredient(s)</h3>
+  <div class="recipeClass">
+    <textarea id="RecipeClass" cols="1"></textarea>
+  </div>
+
+  <script src="scripts/initializer.js"></script>
+  <script src="scripts/events.js"></script>
+
+</body>
+</html>

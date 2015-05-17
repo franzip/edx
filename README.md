@@ -13,6 +13,7 @@
 <hr>
 <div id="#courses">
 	<ul>
+  <li><a href="https://www.edx.org/course/introduction-typescript-microsoft-dev201x" target="_blank">Introduction to Typescript</a> - <i> Microsoft / 2015 </i></li>
   <li><a href="https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-02x" target="_blank">Linear Algebra - Foundations to Frontiers</a> - <i> UTAustinX / 2015 </i></li>
     <li><a href="https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x" target="_blank">Introduction to Bootstrap – A Tutorial</a> - <i> Microsoft / 2015 </i></li>
     <li><a href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-cs169-1x-engineering-1377" target="_blank">CS169.1x Engineering Software as Service</a> - <i> UC BerkeleyX / Winter 2014 </i></li>

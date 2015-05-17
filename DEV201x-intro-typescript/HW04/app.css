@@ -1,0 +1,27 @@
+﻿body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align:center;
+  margin:50px 0px; padding:0px;
+}
+
+#wrapper {
+	width:600px;
+	margin:0px auto;
+	text-align:left;
+	padding:15px;
+	border:1px solid #c8c8c8;
+	background-color:#efefef;
+}
+
+.row {
+  padding-top: 10px;
+}
+
+span {
+  font-style: italic;
+}
+
+
+input[class="form-control"] {
+  width: 150px;
+}

@@ -1,0 +1,47 @@
+﻿{
+    "recipeCategories": [
+        {
+            "title": "Appetizers",
+            "foodGroups": [ { "title": "vegetable" }, { "title": "grain" }, { "title": "meat" } ],
+            "details": "These foods are designed to awaken the palate prior to the meal. They should be savory, light, and easy to eat."
+        },
+        {
+            "title": "Pasta dishes",
+            "foodGroups": [ { "title": "grain" } ],
+            "details": "Pasta dishes are served as a first course in many parts of the world. They are among the most versatile of dishes and cook's can get very creative with them."
+        },
+        {
+            "title": "Vegetarian dishes",
+            "foodGroups": [ { "title": "vegetable" }, { "title": "grain" } ],
+            "details": "These dishes are not just for vegetarians. Including dishes based around vegetables, grains, or legumes help round out your meal and offer variety for those who choose not to eat meat."
+        },
+        {
+            "title": "Salads",
+            "foodGroups": [ { "title": "vegetable" } ],
+            "details": "Some cooks serve a salad course at the end of the meal. These dishes can include just about anything including a variety of cured meats and even grains."
+        },
+        {
+            "title": "Meat dishes",
+            "foodGroups": [
+                { "title": "meat" }
+            ],
+            "details": "A great source of protein, well-prepared meat dishes can serve as the main course or a fancy side dish for any meal."
+        },
+        {
+            "title": "Breads",
+            "foodGroups": [ { "title": "grain" } ],
+            "details": "Breads provide a great source of grain and can be used to complement any meal. Many cooks prepare bread as an appetizer."
+        },
+        {
+            "title": "Sauces",
+            "foodGroups": [ { "title": "vegetable" }, { "title": "grain" } ],
+            "details": "While not a 'dish' in the strict sense, sauces are an integral part of a well-balanced flavor profile for most dishes. Use them with meats, vegetables, or even a dip for breads."
+        },
+        {
+            "title": "Desserts",
+            "foodGroups": [ { "title": "sugar" }, { "title": "grain" } ],
+            "details": "No meal is complete without something sweet to end the dining experience. Cooks have gotten very creative with desserts turning them into artwork that makes a meal memorable."
+        }
+
+    ]
+}
